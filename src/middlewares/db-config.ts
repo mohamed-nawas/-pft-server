@@ -14,7 +14,7 @@ const client = new MongoClient(uri, {
 
 client.connect()
 .then((client) => client.db("admin").command({ ping: 1 }))
-.then(() => console.log("Pinged your deployment, You successfully connected to mongodb"))
+.then(() => console.log("Pinged your deployment, You successfully connected to mongodb at url => " + uri))
 .catch((e) => console.error("Error connecting to mongodb", e));
 
 module.exports = client;
