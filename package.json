@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "staging": "ts-node -r tsconfig-paths/register ./src/index.ts --enable-source-maps --no-warnings --loader",
-    "dev": "nodemon -r tsconfig-paths/register ./src/index.ts --enable-source-maps --no-warnings --loader"
+    "dev": "nodemon -r tsconfig-paths/register ./src/index.ts --enable-source-maps --no-warnings --loader",
+    "start": "node api/index.ts"
   },
   "keywords": [],
   "author": "",
