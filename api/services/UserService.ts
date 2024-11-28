@@ -1,10 +1,15 @@
-import { UserExistsException } from "@exceptions/UserExistsException";
-import { UserNotFoundException } from "@exceptions/UserNotFoundException";
-import { WrongPasswordException } from "@exceptions/WrongPasswordException";
-import { UserRepository } from "@repository/UserRepository";
+// import { UserExistsException } from "@exceptions/UserExistsException";
+import { UserExistsException } from "../exceptions/UserExistsException";
+// import { UserNotFoundException } from "@exceptions/UserNotFoundException";
+import { UserNotFoundException } from "../exceptions/UserNotFoundException";
+// import { WrongPasswordException } from "@exceptions/WrongPasswordException";
+import { WrongPasswordException } from "../exceptions/WrongPasswordException";
+// import { UserRepository } from "@repository/UserRepository";
+import { UserRepository } from "../repository/UserRepository";
 import bcrypt from 'bcrypt';
 import { TOKEN_ISSUER, TOKEN_SUBJECT, TOKEN_AUDIENCE } from "./JwtService";
-const jwtService = require("@services/JwtService");
+// const jwtService = require("@services/JwtService");
+const jwtService = require("./JwtService");
 
 /**
  * User service

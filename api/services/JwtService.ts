@@ -1,4 +1,5 @@
-import { PFTException } from "@exceptions/PFTException";
+// import { PFTException } from "@exceptions/PFTException";
+import { PFTException } from "../exceptions/PFTException";
 
 const fs = require('fs');
 const jwt = require('jsonwebtoken');

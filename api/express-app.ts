@@ -1,9 +1,12 @@
 // import userRouter from "@routers/UserRouter";
 import userRouter from "./routers/UserRouter";
 import express, { Application } from "express";
-const corsConfig = require('@middlewares/cors-config');
-const dbConfig = require("@middlewares/db-config");
-const errorHandler = require("@middlewares/error-handle-config");
+// const corsConfig = require('@middlewares/cors-config');
+const corsConfig = require('./middlewares/cors-config');
+// const dbConfig = require("@middlewares/db-config");
+const dbConfig = require("./middlewares/db-config");
+// const errorHandler = require("@middlewares/error-handle-config");
+const errorHandler = require("./middlewares/error-handle-config");
 
 const BASE_URL = '/api/v1';
 const USER_BASE_URL = BASE_URL + '/user'

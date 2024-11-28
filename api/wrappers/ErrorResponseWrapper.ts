@@ -1,4 +1,5 @@
-import { ErrorResponseStatusType } from "@enums/ErrorResponseStatusType";
+// import { ErrorResponseStatusType } from "@enums/ErrorResponseStatusType";
+import { ErrorResponseStatusType } from "../enums/ErrorResponseStatusType";
 import { ResponseWrapper } from "./ResponseWrapper";
 
 /**
