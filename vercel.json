@@ -9,16 +9,6 @@
         }
       }
     ],
-    "build": {
-      "env": {
-        "TS_NODE_PROJECT": "tsconfig.json",
-        "TS_NODE_TRANSPILE_ONLY": "true"
-      },
-      "commands": [
-        "tsc --project tsconfig.json",
-        "tsc-alias -p tsconfig.json"
-      ]
-    },
     "rewrites": [
       { "source": "/(.*)", "destination": "/api" }
     ]
