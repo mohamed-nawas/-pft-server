@@ -1,4 +1,26 @@
 {
-	"version": 2,
-	"rewrites": [{ "source": "/(.*)", "destination": "/api" }]
-}
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/index.ts",
+        "use": "@vercel/node",
+        "config": {
+          "maxLambdaSize": "50mb"
+        }
+      }
+    ],
+    "build": {
+      "env": {
+        "TS_NODE_PROJECT": "tsconfig.json",
+        "TS_NODE_TRANSPILE_ONLY": "true"
+      },
+      "commands": [
+        "tsc --project tsconfig.json",
+        "tsc-alias -p tsconfig.json"
+      ]
+    },
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/api" }
+    ]
+  }
+  
