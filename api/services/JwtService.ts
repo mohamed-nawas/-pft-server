@@ -7,8 +7,8 @@ const jwt = require('jsonwebtoken');
 /**
  * Jwt service
  */
-var PRIVATE_KEY = process.env.PRIVATE_KEY || fs.readFileSync('src/keys/private.key', 'utf8');
-var PUBLIC_KEY = process.env.PUBLIC_KEY || fs.readFileSync('src/keys/public.key', 'utf8');
+var PRIVATE_KEY = fs.readFileSync('src/keys/private.key', 'utf8');
+var PUBLIC_KEY = fs.readFileSync('src/keys/public.key', 'utf8');
 
 export const TOKEN_ISSUER = 'Computic Solutions';
 export const TOKEN_SUBJECT = 'Auth token';
