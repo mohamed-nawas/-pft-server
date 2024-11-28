@@ -1,4 +1,5 @@
-import userRouter from "@routers/UserRouter";
+// import userRouter from "@routers/UserRouter";
+import userRouter from "./routers/UserRouter";
 import express, { Application } from "express";
 const corsConfig = require('@middlewares/cors-config');
 const dbConfig = require("@middlewares/db-config");
