@@ -26,7 +26,7 @@ export function sign(payload: any, $Option: JwtSignVerifyOptions): boolean {
         subject: $Option.subject,
         audience: $Option.audience,
         expiresIn: '1h',
-        algorithm: 'RS256'
+        algorithm: 'HS256'
     };
 
     try {
@@ -43,7 +43,7 @@ export function verify(token: string, $Option: JwtSignVerifyOptions): boolean {
         subject: $Option.subject,
         audience: $Option.audience,
         expiresIn: '1h',
-        algorithm: ['RS256']
+        algorithm: ['HS256']
     };
 
     try {
