@@ -1,6 +1,9 @@
-import { RequestDto } from "@dtos/request/RequestDto";
-import { InvalidEmailException } from "@exceptions/InvalidEmailException";
-import { InvalidPwdException } from "@exceptions/InvalidPwdException";
+// import { RequestDto } from "@dtos/request/RequestDto";
+import { RequestDto } from "./RequestDto";
+// import { InvalidEmailException } from "@exceptions/InvalidEmailException";
+import { InvalidEmailException } from "../../../exceptions/InvalidEmailException";
+// import { InvalidPwdException } from "@exceptions/InvalidPwdException";
+import { InvalidPwdException } from "../../../exceptions/InvalidPwdException";
 
 
 export class RegistrationRequestDto implements RequestDto {

@@ -1,4 +1,5 @@
-import { RequestDto } from "@dtos/request/RequestDto";
+// import { RequestDto } from "@dtos/request/RequestDto";
+import { RequestDto } from "./RequestDto";
 
 
 export class LoginRequestDto implements RequestDto {
