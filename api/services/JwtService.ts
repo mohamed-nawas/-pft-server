@@ -32,6 +32,7 @@ export function sign(payload: any, $Option: JwtSignVerifyOptions): boolean {
     try {
         return jwt.sign(payload, PRIVATE_KEY, signOptions);
     } catch (e) {
+        console.error(e);
         throw new PFTException("Jwt sign in failed", e as Error);
     }
 }
@@ -48,6 +49,7 @@ export function verify(token: string, $Option: JwtSignVerifyOptions): boolean {
     try {
         return jwt.verify(token, PUBLIC_KEY, verifyOptions);
     } catch (e) {
+        console.error(e);
         throw new PFTException("Jwt verification failed", e as Error);
     }
 }
