@@ -7,8 +7,8 @@ const jwt = require('jsonwebtoken');
 /**
  * Jwt service
  */
-// var PRIVATE_KEY = fs.readFileSync('api/keys/private.key', 'utf8');
-// var PUBLIC_KEY = fs.readFileSync('api/keys/public.key', 'utf8');
+var PRIVATE_KEY = process.env.PRIVATE_KEY || fs.readFileSync('api/keys/private.key', 'utf8');
+var PUBLIC_KEY = process.env.PUBLIC_KEY || fs.readFileSync('api/keys/public.key', 'utf8');
 
 export const TOKEN_ISSUER = 'Computic Solutions';
 export const TOKEN_SUBJECT = 'Auth token';
@@ -30,7 +30,7 @@ export function sign(payload: any, $Option: JwtSignVerifyOptions): boolean {
     };
 
     try {
-        return jwt.sign(payload, 'PRIVATE_KEY', signOptions);
+        return jwt.sign(payload, PRIVATE_KEY, signOptions);
     } catch (e) {
         throw new PFTException("Jwt sign in failed", e as Error);
     }
@@ -46,7 +46,7 @@ export function verify(token: string, $Option: JwtSignVerifyOptions): boolean {
     };
 
     try {
-        return jwt.verify(token, 'PUBLIC_KEY', verifyOptions);
+        return jwt.verify(token, PUBLIC_KEY, verifyOptions);
     } catch (e) {
         throw new PFTException("Jwt verification failed", e as Error);
     }
