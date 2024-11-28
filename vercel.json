@@ -5,7 +5,10 @@
         "src": "api/index.ts",
         "use": "@vercel/node",
         "config": {
-          "maxLambdaSize": "50mb"
+          "maxLambdaSize": "50mb",
+          "typescript": {
+            "tsconfigPath": "./tsconfig.json"
+          }
         }
       }
     ],
