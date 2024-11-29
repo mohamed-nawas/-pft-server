@@ -1,4 +1,3 @@
-import 'module-alias/register';
 import "reflect-metadata";
 require('dotenv').config();
 import express, { Application, Request, Response } from "express";
@@ -19,10 +18,4 @@ const StartServer = async() => {
     });
 }
 
-if (process.env.VERCEL === '1') {
-    module.exports = (req: Request, res: Response) => {
-        const app: Application = express();
-        expressApp(app);
-        app(req, res);
-    }
-} else StartServer();
+StartServer();

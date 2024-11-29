@@ -1,8 +1,5 @@
-// import { SuccessResponseStatusType } from "@enums/SuccessResponseStatusType";
 import { SuccessResponseStatusType } from "../enums/SuccessResponseStatusType";
-// import { ResponseWrapper } from "@wrappers/ResponseWrapper";
 import { ResponseWrapper } from "../wrappers/ResponseWrapper";
-// import { ResponseDto } from "@dtos/response/ResponseDto";
 import { ResponseDto } from "../domain/dtos/response/ResponseDto";
 
 /**

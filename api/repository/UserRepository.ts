@@ -1,9 +1,6 @@
 import { Collection, Db } from "mongodb";
-// import { User } from "@entities/User";
 import { User } from "../domain/entities/User";
-// import { PFTException } from "@exceptions/PFTException";
 import { PFTException } from "../exceptions/PFTException";
-// const dbConnection = require("@middlewares/db-config");
 const dbConnection = require("../middlewares/db-config");
 
 /**

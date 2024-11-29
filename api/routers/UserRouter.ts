@@ -1,4 +1,3 @@
-// import { UserController } from '@controllers/UserController';
 import { UserController } from '../controllers/UserController';
 import express from 'express';
 
