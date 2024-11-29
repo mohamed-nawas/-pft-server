@@ -1,5 +1,17 @@
 {
     "version": 2,
+    "builds": [
+      {
+        "src": "api/index.ts",
+        "use": "@vercel/node",
+        "config": {
+          "maxLambdaSize": "50mb",
+          "typescript": {
+            "tsconfigPath": "./tsconfig.json"
+          }
+        }
+      }
+    ],
     "rewrites": [
       { "source": "/(.*)", "destination": "/api" }
     ]
