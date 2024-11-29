@@ -4,6 +4,7 @@ import { WrongPasswordException } from "../exceptions/WrongPasswordException";
 import { UserRepository } from "../repository/UserRepository";
 import bcrypt from 'bcrypt';
 import { TOKEN_ISSUER, TOKEN_SUBJECT, TOKEN_AUDIENCE } from "./JwtService";
+import { UserModel } from "../domain/models/User";
 const jwtService = require("./JwtService");
 
 /**
@@ -15,7 +16,7 @@ export class UserService {
     private repository: UserRepository;
 
     public constructor() {
-        this.repository = new UserRepository();
+        this.repository = new UserRepository(UserModel);
     }
 
     public async createUser(username: string, email: string, rawPwd: string): Promise<string> {
