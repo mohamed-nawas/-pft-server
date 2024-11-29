@@ -1,5 +1,4 @@
-import { Collection, Db } from "mongodb";
-import { User } from "../domain/entities/User";
+import { User, UserModel } from "../domain/models/User";
 import { PFTException } from "../exceptions/PFTException";
 const dbConnection = require("../middlewares/db-config");
 
@@ -8,34 +7,30 @@ const dbConnection = require("../middlewares/db-config");
  */
 export class UserRepository {
 
-    private db: Db;
-    private collection: Collection;
+    private model: typeof UserModel;
 
-    public constructor() {
-        this.db = dbConnection.db("pft-db");
-        this.collection = this.db.collection("user");
+    public constructor(model: typeof UserModel) {
+        // this.db = dbConnection.db("pft-db");
+        // this.collection = this.db.collection("user");
+        this.model = model;
     }
 
     public async save(username: string, email: string, hashedUserPwd: string): Promise<void> {
-        const user: User = {
-            username: username,
-            email: email,
-            pwd: hashedUserPwd,
-        };
+        const user: User = new this.model({ username: username, email: email, pwd: hashedUserPwd });
         try {
-            await this.collection.insertOne(user);
+            await user.save();
         } catch (e) {
+            console.error(e);
             throw new PFTException("Error occurred when saving a user to db", e as Error);
         }
     }
 
     public async findByEmail(email: string): Promise<User | null> {
         try {
-            const response = await this.collection.findOne({ email: email });
-            if (!response) return null;
-            const { _id, ...user } = response;
-            return user as User;
+            const user: User | null = await this.model.findOne({ email: email });
+            return user ? user.toObject() : null;
         } catch (e) {
+            console.error(e);
             throw new PFTException("Error occurred when finding user by email from db", e as Error);
         }
     }

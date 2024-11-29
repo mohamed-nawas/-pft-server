@@ -25,7 +25,8 @@ export function sign(payload: any, $Option: JwtSignVerifyOptions): boolean {
         subject: $Option.subject,
         audience: $Option.audience,
         expiresIn: '1h',
-        algorithm: 'HS256'
+        // algorithm: 'RS256'      // use for dev
+        algorithm: 'HS256'      // use for prod with vercel, since there is an issue with asymettric key passing as env in vercel
     };
 
     try {
@@ -42,7 +43,8 @@ export function verify(token: string, $Option: JwtSignVerifyOptions): boolean {
         subject: $Option.subject,
         audience: $Option.audience,
         expiresIn: '1h',
-        algorithm: ['HS256']
+        // algorithm: ['RS256']        // use for dev
+        algorithm: ['HS256']        // use for prod with vercel, since there is an issue with asymettric key passing as env in vercel
     };
 
     try {

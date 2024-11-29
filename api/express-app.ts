@@ -1,7 +1,7 @@
 import userRouter from "./routers/UserRouter";
 import express, { Application } from "express";
 const corsConfig = require('./middlewares/cors-config');
-const dbConfig = require("./middlewares/db-config");
+// const dbConfig = require("./middlewares/db-config");
 const errorHandler = require("./middlewares/error-handle-config");
 
 const BASE_URL = '/api/v1';
@@ -17,7 +17,8 @@ module.exports = async (app: Application) => {
     app.use(express.urlencoded({extended: true}));
 
     // db connection
-    dbConfig;
+    // only require to be called when connecting with native driver
+    // dbConfig;
 
     // cors
     await corsConfig(app);
