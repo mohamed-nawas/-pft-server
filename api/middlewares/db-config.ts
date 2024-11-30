@@ -27,6 +27,7 @@ const uri = process.env.ATLAS_URI || 'mongodb://localhost:27017';
  * Mongo connection with mongoose
  */
 const initConnection = async (): Promise<void> => {
+    process.env.ENVIRONMENT ? console.log(`Environment => ${process.env.ENVIRONMENT}`) : null;
     try {
         await mongoose.connect(uri, {
             dbName: 'pft-db',
